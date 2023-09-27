@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task3</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>1st Number:</td>
+            <td><input id="i1" type="number"></td>
+        </tr>
+        <tr>
+            <td>2nd Number:</td>
+            <td><input id="i2" type="number"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button onclick="mul()">Multiply</button>
+                <button onclick="div()">Divide</button>
+            </td>
+        </tr>
+    </table>
+    <p id="i3"></p>
+
+    <script>
+        function mul(){
+            var i1=document.getElementById("i1").value
+            var a= Number.parseInt(i1)
+            var i2=document.getElementById("i2").value
+            var b=Number.parseInt(i2)
+            var res=a*b
+            document.getElementById("i3").innerHTML="The Result Is: <br>"+res
+        }
+        function div(){
+            var i1=document.getElementById("i1").value
+            var a= Number.parseInt(i1)
+            var i2=document.getElementById("i2").value
+            var b=Number.parseInt(i2)
+            var res=a/b
+            document.getElementById("i3").innerHTML="The Result Is: <br>"+res
+        }
+    </script>
+</body>
+</html>

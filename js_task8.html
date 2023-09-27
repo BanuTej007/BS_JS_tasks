@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task8</title>
+    <style>
+        .c1{
+            background-color: red;
+            color:white;
+            border-radius: 50px;
+            text-decoration: underline;
+            padding: 5px 10px;
+        }
+        div{
+            width: fit-content;
+            height: auto;
+            background: radial-gradient(circle at center top, rgb(249, 249, 133), rgb(202, 75, 143));
+        }
+        th{
+            text-align: end;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div>
+            <table cellpadding="5px 0px" >
+                <caption><h2 style="color:blue">Registration Form</h4></caption>
+                <tr>
+                    <th>First Name</th>
+                    <td><input type="text" size="50" id="i1" onkeyup="check1()"></td>
+                    <td><span id="fn"></span></td>
+                </tr>
+                <tr>
+                    <th>Last Name</th>
+                    <td><input type="text" size="50" id="i2" onkeyup="check2()"></td>
+                    <td><span id="ln"></span></td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td><input type="email" size="50" id="i3" onkeyup="check3()"></td>
+                    <td><span id="e"></span></td>
+                </tr>
+                <tr>
+                    <th>Password</th>
+                    <td><input type="password" size="50" id="i4" onkeyup="check4()"></td>
+                    <td><span id="pwd"></span></td>
+                </tr>
+                <tr>
+                    <th>Re-enter Password</th>
+                    <td><input type="password" size="50" id="i5" onkeyup="check5()"></td>
+                    <td><span id="re_pwd"></span></td>
+                </tr>
+                <tr>
+                    <th rowspan="2">Gender:</th>
+                    <td>
+                        <input type="radio" name="g">Male
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="g">Female</td>
+                </tr>
+                <tr>
+                    <th>Age</th>
+                    <td><input type="number" size="50" id="i6" onkeyup="check6()"></td>
+                    <td><span id="age"></span></td>
+                </tr>
+                <tr>
+                    <th>Phone number</th>
+                    <td><input type="number" size="50" id="i7" onkeyup="check7()"></td>
+                    <td><span id="pn"></span></td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td><textarea size="50" id="i8" onkeyup="check8()"></textarea></td>
+                    <td><span id="ad"></span></td>
+                </tr>
+                <tr>
+                    <th>State</th>
+                    <td><input type="text" size="50" id="i9" onkeyup="check9()"></td>
+                    <td><span id="st"></span></td>
+                </tr>
+                <tr>
+                    <th>Country</th>
+                    <td>
+                        <select>
+                            <option>Choose your country</option>
+                            <option>India</option>
+                            <option>USA</option>
+                            <option>UK</option>
+                            <option>Australia</option>
+                            <option>Canada</option>
+                            <option>China</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Languages Known</th>
+                    <td>
+                        <input type="checkbox">English
+                        <input type="checkbox">Kannada
+                        <input type="checkbox">Hindi
+                        <input type="checkbox">Telugu
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="checkbox" checked>Hereby I declare all the given details are true</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: end;">Log in to <a href="https://ethnus.com">Ethnus</a> website</td>
+                </tr>
+            </table>
+            <br>
+            <table width="30%">
+                <tr align="center">
+                    <td><button class="c1">REGISTER</button></td>
+                </tr>
+            </table>
+        </div>
+    </center>
+
+    <script>
+        function check1(){
+            var p=document.getElementById("i1").value
+            if(p.length<5){
+                document.getElementById("fn").innerHTML="POOR"
+                document.getElementById("fn").style.color="red"
+            }
+            else{
+                document.getElementById("fn").innerText="GOOD"
+                document.getElementById("fn").style.color="green"
+            }
+        }
+        function check2(){
+            var p=document.getElementById("i2").value
+            if(p.length<5){
+                document.getElementById("ln").innerHTML="POOR"
+                document.getElementById("ln").style.color="red"
+            }
+            else{
+                document.getElementById("ln").innerText="GOOD"
+                document.getElementById("ln").style.color="green"
+            }
+        }
+        function check3(){
+            var p=document.getElementById("i3").value
+            if(p.length<5){
+                document.getElementById("e").innerHTML="POOR"
+                document.getElementById("e").style.color="red"
+            }
+            else{
+                document.getElementById("e").innerText="GOOD"
+                document.getElementById("e").style.color="green"
+            }
+        }
+        function check4(){
+            var p=document.getElementById("i4").value
+            if(p.length<5){
+                document.getElementById("pwd").innerHTML="POOR"
+                document.getElementById("pwd").style.color="red"
+            }
+            else{
+                document.getElementById("pwd").innerText="GOOD"
+                document.getElementById("pwd").style.color="green"
+            }
+        }
+        function check5(){
+            var p=document.getElementById("i4").value
+            var q=document.getElementById("i5").value
+            if(q.length<5||p!=q){
+                document.getElementById("re_pwd").innerHTML="POOR OR MISMATCH"
+                document.getElementById("re_pwd").style.color="red"
+            }
+            else{
+                document.getElementById("re_pwd").innerText="GOOD"
+                document.getElementById("re_pwd").style.color="green"
+            }
+        }
+        function check6(){
+            var p=document.getElementById("i6").value
+            if(p<10){
+                document.getElementById("age").innerHTML="POOR"
+                document.getElementById("age").style.color="red"
+            }
+            else{
+                document.getElementById("age").innerText="GOOD"
+                document.getElementById("age").style.color="green"
+            }
+        }
+        function check7(){
+            var p=document.getElementById("i7").value
+            if(p.length==10){
+                document.getElementById("pn").innerHTML="GOOD"
+                document.getElementById("pn").style.color="green"
+            }
+            else{
+                document.getElementById("pn").innerText="POOR"
+                document.getElementById("pn").style.color="red"
+            }
+        }
+        function check8(){
+            var p=document.getElementById("i8").value
+            if(p.length<=10){
+                document.getElementById("ad").innerHTML="POOR"
+                document.getElementById("ad").style.color="red"
+            }
+            else{
+                document.getElementById("ad").innerText="GOOD"
+                document.getElementById("ad").style.color="green"
+            }
+        }
+        function check9(){
+            var p=document.getElementById("i9").value
+            if(p.length<5){
+                document.getElementById("st").innerHTML="POOR"
+                document.getElementById("st").style.color="red"
+            }
+            else{
+                document.getElementById("st").innerText="GOOD"
+                document.getElementById("st").style.color="green"
+            }
+        }
+    </script>
+</body>
+</html>

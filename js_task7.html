@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task7</title>
+    <style>
+        input{
+            position:relative;
+            animation: animation1 30s infinite;
+            animation-play-state: paused;
+        }
+        @keyframes animation1{
+            from{ left: 0%; } 
+            to{ left: 100%; }
+        }
+        h1{
+            color:navy;
+        }
+    </style>
+</head>
+<body>
+    <input id="i1" type="image" src="./train.png"><br>
+    <center>
+        <h1>Click the following buttons to handle animation</h1>
+        <button onclick="start()">Start</button>
+        <button onclick="stop()">Stop</button>
+    </center>
+    <script>
+        function start(){
+            const a=document.getElementById("i1")
+            a.style.animationPlayState='running'
+        }
+        function stop(){
+            const b=document.getElementById("i1")
+            b.style.animationPlayState='paused'
+        }
+    </script>
+</body>
+</html>

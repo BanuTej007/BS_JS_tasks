@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task5</title>
+    <style>
+        span{
+            color: red;
+        }
+        tr,td{
+            padding: 5px 0px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input id="i1" type="text"></td>
+                <td><span id="n"></span></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input id="i2" type="email"></td>
+                <td><span id="e"></span></td>
+            </tr>
+            <tr>
+                <td>Website:</td>
+                <td><input id="i3" type="url"></td>
+                <td><span id="w"></span></td>
+            </tr>
+            <tr>
+                <td>Message:</td>
+                <td><textarea id="i4"></textarea></td>
+                <td><span id="m"></span></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2"><input type="button" value="Submit" onclick="req()"></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function req(){
+            var p=document.getElementById("i1").value
+            if(p.length==0){
+                document.getElementById("n").innerHTML="This field is required"
+                document.getElementById("i1").style.borderStyle="solid"
+                document.getElementById("i1").style.borderColor="red"
+            }
+
+            var q=document.getElementById("i2").value
+            if(q.length==0){
+                document.getElementById("e").innerHTML="A valid email address is required"
+                document.getElementById("i2").style.borderStyle="solid"
+                document.getElementById("i2").style.borderColor="red"
+            }
+
+            var r=document.getElementById("i3").value
+            if(r.length==0){
+                document.getElementById("w").innerHTML="A valid url is required"
+                document.getElementById("i3").style.borderStyle="solid"
+                document.getElementById("i3").style.borderColor="red"
+            }
+            
+            var s=document.getElementById("i4").value
+            if(s.length==0){
+                document.getElementById("m").innerHTML="This field is required"
+                document.getElementById("i4").style.borderStyle="groove"
+                document.getElementById("i4").style.borderColor="red"
+            }
+        }
+    </script>
+</body>
+</html>
